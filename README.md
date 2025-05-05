@@ -3,7 +3,7 @@
 Welcome to my official portfolio website! This site showcases my projects, design work, skills, certifications, and contact details. Designed to be visually impactful and fully responsive across all devices.
 
 ## 🌐 Live Website
-[View Portfolio](https://your-portfolio-url.com)
+[View Portfolio]([https://your-portfolio-url.com](https://loganathan-portfolio.netlify.app/))
 
 ## 👨‍💻 About Me
 I’m Loganathan, a passionate designer and developer currently pursuing B.Tech Information Technology at Vel Tech High Tech Dr.Rangarajan Dr.Sakunthala Engineering College. I specialize in UI/UX, graphic design, and development with a focus on creativity, usability, and clean visuals.
