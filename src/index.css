@@ -1,0 +1,194 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 80% 98%;
+    --foreground: 210 40% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 213 58% 19%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 177 53% 46%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 177 53% 46%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 177 53% 46%;
+
+    --radius: 0.75rem;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply scroll-smooth;
+  }
+  body {
+    @apply bg-navy text-white overflow-x-hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tighter;
+  }
+
+  section {
+    @apply py-16 md:py-24 px-4;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-bold mb-8 relative inline-block;
+  }
+
+  .section-title::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-3/4 h-1 bg-highlight;
+    transform: translateY(8px);
+  }
+}
+
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-md px-6 py-2.5 font-semibold shadow-md transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-ring;
+  }
+
+  .btn-primary {
+    @apply bg-teal hover:bg-teal-light text-white;
+  }
+
+  .btn-outline {
+    @apply bg-transparent border-2 border-teal hover:border-teal-light text-white hover:text-teal-light;
+  }
+
+  .nav-link {
+    @apply relative text-white hover:text-teal-light transition-colors duration-300 px-2 py-1;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-0 h-0.5 bg-teal transition-all duration-300;
+  }
+
+  .nav-link:hover::after {
+    @apply w-full;
+  }
+
+  .card {
+    @apply bg-navy-light rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300;
+  }
+
+  .input-field {
+    @apply px-4 py-3 w-full bg-navy-dark text-white rounded-lg border border-navy-light focus:border-teal outline-none focus:ring-1 focus:ring-teal transition-all;
+  }
+
+  .skill-bar {
+    @apply h-4 relative overflow-hidden rounded-full bg-navy-dark;
+  }
+
+  .skill-progress {
+    @apply h-full bg-teal absolute left-0 top-0 transition-all duration-1000 ease-out;
+  }
+
+  .project-card {
+    @apply p-6 bg-navy-light rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-navy-light hover:border-teal/50;
+  }
+  
+  .timeline-item {
+    @apply relative pl-8 pb-8 border-l-2 border-teal/50 last:border-l-0 last:pb-0;
+  }
+
+  .timeline-dot {
+    @apply absolute -left-[9px] w-4 h-4 rounded-full bg-teal;
+  }
+}
+
+.container-wrapper {
+  @apply max-w-[1400px] mx-auto px-4 md:px-8;
+}
+
+.bg-pattern {
+  background-color: #102E50;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.glass {
+  @apply bg-white/5 backdrop-blur-sm border border-white/10;
+}
+
+.text-gradient {
+  @apply bg-gradient-to-r from-teal to-highlight bg-clip-text text-transparent;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  border-radius: inherit;
+  padding: 1px;
+  background: linear-gradient(45deg, #36B5AD, #FF7F50);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.rotating-bg {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: -5;
+}
+
+.rotating-bg::before {
+  content: '';
+  position: absolute;
+  width: 150vh;
+  height: 150vh;
+  top: -50vh;
+  left: -50vh;
+  background: radial-gradient(circle, rgba(54, 181, 173, 0.15) 0%, rgba(16, 46, 80, 0) 70%);
+  animation: spin-slow 20s linear infinite;
+}
+
+.rotating-bg::after {
+  content: '';
+  position: absolute;
+  width: 150vh;
+  height: 150vh;
+  bottom: -50vh;
+  right: -50vh;
+  background: radial-gradient(circle, rgba(255, 127, 80, 0.1) 0%, rgba(16, 46, 80, 0) 70%);
+  animation: spin-slow 25s linear infinite reverse;
+}
